@@ -23,7 +23,10 @@ string addHexStr(string s1, string s2)
 				carry = 1;
 				dval =  dval % 15;
 			}
-			sumStr.insert(sumStr.begin(),(deval + '0'));
+			if(dval >= 0 && dval <= 9)
+				sumStr.insert(sumStr.begin(),(deval + '0'));
+			else if(dval <= 'A' && dval >= 'F')
+				sumStr.insert(sumStr.begin(),(deval - 10 + 'A'));
 	}
 	if(carry == 1)
 		sumStr.insert(sumStr.begin(),1 + '0');
