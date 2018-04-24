@@ -1,4 +1,4 @@
-string addDigitString (string s1,str s2, int base)
+string addDigitString (string s1,string s2, int base)
 {
 	string sumStr
 	int carry = 0;
