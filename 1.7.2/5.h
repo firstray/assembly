@@ -1,6 +1,6 @@
 string addDigitString (string s1,string s2, int base)
 {
-	string sumStr
+	string sumStr;
 	int carry = 0;
 	
 	for(int i = s1.size() - 1; i >= 0; i--){
