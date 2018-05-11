@@ -1,14 +1,36 @@
 /*
-**从src中的字符串向dst数组准确地复制N个字符（如果需要，用NUL进行填充）。
+** 从src中提取指定的字符串
 */
-void copy_n(char dst[], char src[], int n)
+int sub str(char dst[], char src[], int start, int len)
 {
-	int dst_index, src_index;
-	src_index = 0;
-	for(dst_index = 0; dst_index < n; dst_index += 1)
+	int 	srcindex;
+	int 	dstindex;
+	
+	dstindex = 0;
+	if( start >= 0 && len > 0)
 	{
-		dst[dst_index] = src[src_index];
-		if(src[src_index] != 0)
-			src_index += 1;
+		/*
+		**将srcindex定位到开始点，如果到了就停止。
+		*/
+		for(srcindex = 0;
+		srcindex < start && src[index] != '\0';
+		srcindex += 1)
+		;
+		
+		/*
+		**复制希望的字符串，一开始定位到null就停止
+		*/
+		while( len > 0 && src[srcindex] != '\0')
+		{
+			dst[dstindex] = src[srcindex];
+			dstindex += 1;
+			srcindex += 1;
+			len -= 1;
+		}
 	}
+	/*
+	**添加null以结束。
+	*/
+	dst[dstindex] = '\0';
+	return dstindex;
 }
